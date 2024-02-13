@@ -145,7 +145,7 @@ If you do not wish to run the full X1 Testnet Validator node, you can finish wit
 
 To do so, run the following command:
 ```bash
-x1 --testnet --syncmode snap --xenblocks-endpoint ws://xenblocks.io:6668
+x1 --testnet --syncmode full --xenblocks-endpoint ws://xenblocks.io:6668
 ```
 <img src="https://github.com/JozefJarosciak/X1/assets/3492464/8f8a4158-89d4-4c72-a9d7-c059f770c397" width="50%">
 
