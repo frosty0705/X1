@@ -145,7 +145,7 @@ If you do not wish to run the full X1 Testnet Validator node, you can finish wit
 
 To do so, run the following command:
 ```bash
-x1 --testnet --syncmode snap --xenblocks-endpoint ws://xenblocks.io:6668
+x1 --testnet --syncmode full --xenblocks-endpoint ws://xenblocks.io:6668
 ```
 <img src="https://github.com/JozefJarosciak/X1/assets/3492464/8f8a4158-89d4-4c72-a9d7-c059f770c397" width="50%">
 
@@ -331,7 +331,7 @@ Ensure your node is stopped (in case it's running).
 
 Execute this and prepare to stop the validator within a couple of seconds after start.
 ```
-x1 --testnet --validator.id VALIDATOR_ID --validator.pubkey VALIDATOR_PUBKEY --validator.password ~/.x1/.password --xenblocks-endpoint ws://xenblocks.io:6668 --gcmode full --syncmode snap
+x1 --testnet --validator.id VALIDATOR_ID --validator.pubkey VALIDATOR_PUBKEY --validator.password ~/.x1/.password --xenblocks-endpoint ws://xenblocks.io:6668 --gcmode full --syncmode full
 ```
 
 As you can see, when we started the Validator by using the above command line, it warned us about allocating more cache, which looked something like this:
@@ -347,7 +347,7 @@ The --cache suggested amount will likely differ from server to server.
 So take note of your --cache number (as shown in the screenshot) and let's improve our validator, running with the --cache variable (suggested method).
 
 ```bash
-x1 --testnet --validator.id VALIDATOR_ID --validator.pubkey VALIDATOR_PUBKEY --validator.password ~/.x1/.password --xenblocks-endpoint ws://xenblocks.io:6668 --gcmode full --syncmode snap --cache YOUR_CACHE_RESULT
+x1 --testnet --validator.id VALIDATOR_ID --validator.pubkey VALIDATOR_PUBKEY --validator.password ~/.x1/.password --xenblocks-endpoint ws://xenblocks.io:6668 --gcmode full --syncmode full --cache YOUR_CACHE_RESULT
 ```
 
 Once fully synchronized and running, you'd see something like this on your screen:
@@ -432,7 +432,7 @@ After=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/home/ubuntu/go-x1/build/x1 --testnet --validator.id VALIDATOR_ID --validator.pubkey VALIDATOR_PUBKEY --validator.password /root/.x1/.password --xenblocks-endpoint ws://xenblocks.io:6668 --gcmode full --syncmode snap --cache YOUR_CACHE_RESULT
+ExecStart=/home/ubuntu/go-x1/build/x1 --testnet --validator.id VALIDATOR_ID --validator.pubkey VALIDATOR_PUBKEY --validator.password /root/.x1/.password --xenblocks-endpoint ws://xenblocks.io:6668 --gcmode full --syncmode full --cache YOUR_CACHE_RESULT
 WorkingDirectory=/home/ubuntu/go-x1
 
 [Install]
